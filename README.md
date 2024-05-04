@@ -1,2 +1,2 @@
-# Pong-game
+# PyPong
 Pong game using Pygame
