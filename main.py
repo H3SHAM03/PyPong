@@ -73,20 +73,7 @@ def Pong():
 				START_TEXT.set_alpha(0)
 				started = True
 
-		# if (ball_pos.x+20) > 1280:
-		# 	if ball_xspeed > 0:
-		# 		ball_xspeed += 5 * dt
-		# 		ball_xspeed = -ball_xspeed
-		# 	else:
-		# 		ball_xspeed -= 5 * dt
-		# 		ball_xspeed = -ball_xspeed
-		# elif (ball_pos.x-20) < 0:
-		# 	if ball_xspeed > 0:
-		# 		ball_xspeed += 5 * dt
-		# 		ball_xspeed = -ball_xspeed
-		# 	else:
-		# 		ball_xspeed -= 5 * dt
-		# 		ball_xspeed = -ball_xspeed
+
 		if (ball_pos.y+20) > 720:
 			if ball_yspeed > 0:
 				ball_yspeed += 5 * dt
@@ -134,22 +121,6 @@ def Pong():
 
 		
 
-		# if ball_mask.overlap(P1_mask,(P1.pos.x-ball_pos.x,P1.pos.y-ball_pos.y)):
-		# 		ball_xspeed = -ball_xspeed
-		# 		ball_xspeed += 5 * dt
-
-		# if ball_mask.overlap(P2_mask,(P2.pos.x-ball_pos.x,P2.pos.y-ball_pos.y)):
-		# 		ball_xspeed = -ball_xspeed
-		# 		ball_xspeed -= 5 * dt
-
-		# if ((ball_pos.x-20) <= (P1.pos.x+17) and (ball_pos.y-20) >= (P1.pos.y-88) and (ball_pos.y+20) <= P1.pos.y+88) or ((
-		# 	ball_pos.x+20) >= (P2.pos.x-17) and (ball_pos.y-20 >= (P2.pos.y-88) and (ball_pos.y+20) <= (P1.pos.y+88))):
-		# 	if ball_xspeed > 0:
-		# 		ball_xspeed = -ball_xspeed
-		# 		ball_xspeed -= 5 * dt
-		# 	else:
-		# 		ball_xspeed = -ball_xspeed
-		# 		ball_xspeed += 5 * dt
 
 		ball_pos.x += ball_xspeed
 		ball_pos.y += ball_yspeed
