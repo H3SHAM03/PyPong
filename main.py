@@ -60,16 +60,20 @@ def Pong():
 					pygame.display.toggle_fullscreen()
 			keys = pygame.key.get_pressed()
 			if keys[pygame.K_w]:
-				P1.pos.y -= 10
+				if P1.pos.y-90 > 0:
+					P1.pos.y -= 10
 			if keys[pygame.K_s]:
-				P1.pos.y += 10
+				if P1.pos.y+90 < 720:
+					P1.pos.y += 10
 			if keys[pygame.K_i]:
-				P2.pos.y -= 10
+				if P2.pos.y-90 > 0:
+					P2.pos.y -= 10
 			if keys[pygame.K_k]:
-				P2.pos.y += 10
+				if P2.pos.y+90 < 720:
+					P2.pos.y += 10
 			if keys[pygame.K_SPACE]:
-				ball_xspeed = 50 * dt
-				ball_yspeed = 50 * dt
+				ball_xspeed = 100 * dt
+				ball_yspeed = 100 * dt
 				START_TEXT.set_alpha(0)
 				started = True
 
