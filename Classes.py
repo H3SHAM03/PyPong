@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from threading import Thread
+import random
 
 class Ball(pygame.sprite.Sprite):
     def __init__(self,x=45,y=45):
@@ -20,7 +21,7 @@ class Ball(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self,x=50,y=50):
+    def __init__(self,opponent: bool,x=50,y=50):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load('assets\\Player.png').convert_alpha()
         self.rect = self.image.get_rect()
@@ -29,9 +30,13 @@ class Player(pygame.sprite.Sprite):
         self.rect.center = (x,y)
         self.pos = None
         self.size = (50,50)
+        self.opponent = opponent
 
     def PlayerUpdate(self,x,y):
         self.rect.center = (x,y)
+
+    def SetOpponent(self,opponent: bool):
+        self.opponent = opponent
 
 # class Barrier(pygame.sprite.Sprite):
 #     def __init__(self,x=0,y=0,isHorizontal=True):
@@ -103,3 +108,7 @@ class CustomThread(Thread):
             self._return = self._target(*self._args, **self._kwargs)
         self.isRunning = False
         self.returnValue = self._return
+
+class RadioButton(Button):
+    def __init__(self):
+        Buttons = []
